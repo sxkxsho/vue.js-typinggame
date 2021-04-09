@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <title>タイピングゲーム/vue.js</title>
+</head>
+
+<body>
+    <div id="app" class="container">
+        <div class="title">
+            <h1>TypingGame</h1>
+            <div class="marker"></div>
+        </div>
+        <button v-if="startFlg!=true" class="startButton mb-20" @click="gameStart">START</button>
+        <div v-if="startFlg">
+            <div class="question mb-20">{{ current_question}}</div>
+            <div v-if="current_question_counts == question_counts" class="clear">Clear!</div>
+            <div class="typeFromWrapper mb-20">
+                <input id="typeFrom" v-model="typeBox" type="text" class="typeForm">
+            </div>
+            <div class="gaugeWrapper mb-20">
+                <div v-bind:style="styleObjet" class="gauge"></div>
+            </div>
+            <div>{{current_question_counts}}/{{question_counts}}</div>
+        </div>
+
+
+    </div>
+
+    <script src="vue.js"></script>
+</body>
+
+</html>
