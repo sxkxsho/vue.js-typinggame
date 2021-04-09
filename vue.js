@@ -9,19 +9,27 @@ new Vue({
             'chocolate',
             'donut',
             'espresso',
+            'example1',
+            'example2',
+            'example3'
         ],
         typeBox: "",
         current_question_counts: 0,
-        question_counts: 0
+        question_counts: 0,
+        i: 0
     },
     computed: {
         styleObjet: function() {
-            width = 20 * this.current_question_counts + "%"
-            if (this.current_question_counts == 5) {
+            width_value = 100 / (this.questions.length + this.i)
+            width = width_value * this.current_question_counts + "%"
+            if (this.current_question_counts == this.questions.length + this.i) {
                 color = "#03a9f4"
             } else {
                 color = "orange"
             }
+            this.i++
+                console.log(this.i)
+            console.log(width_value)
             return {
                 'width': width,
                 'background-color': color
