@@ -9,6 +9,9 @@ new Vue({
             'chocolate',
             'donut',
             'espresso',
+            'example1', //6問目追加
+            'example2', //7問目追加
+            'example3' //8問目追加
         ],
         typeBox: "",
         current_question_counts: 0,

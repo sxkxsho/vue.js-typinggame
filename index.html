@@ -18,7 +18,7 @@
         </div>
         <button v-if="startFlg!=true" class="startButton mb-20" @click="gameStart">START</button>
         <div v-if="startFlg">
-            <div class="question mb-20">{{ current_question}}</div>
+            <div class="question mb-20">{{current_question}}</div>
             <div v-if="current_question_counts == question_counts" class="clear">Clear!</div>
             <div class="typeFromWrapper mb-20">
                 <input id="typeFrom" v-model="typeBox" type="text" class="typeForm">
@@ -28,8 +28,6 @@
             </div>
             <div>{{current_question_counts}}/{{question_counts}}</div>
         </div>
-
-
     </div>
 
     <script src="vue.js"></script>
